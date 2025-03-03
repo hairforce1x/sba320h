@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import './App.css'
 const API_URL = 'https://west.albion-online-data.com'
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className='container'>
       <h1>Albion Online Price Data</h1>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
