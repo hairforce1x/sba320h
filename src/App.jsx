@@ -26,7 +26,8 @@ function App() {
 
   return (
     <div>
-      <h1>test</h1>
+      <h1>Albion Online Price Data</h1>
+      <p>{JSON.stringify(data)}</p>
     </div>
   )
 }
