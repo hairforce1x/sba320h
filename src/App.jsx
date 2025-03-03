@@ -27,7 +27,7 @@ function App() {
   return (
     <div>
       <h1>Albion Online Price Data</h1>
-      <p>{JSON.stringify(data)}</p>
+      <pre>{JSON.stringify(data)}</pre>
     </div>
   )
 }
