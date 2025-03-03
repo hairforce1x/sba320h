@@ -12,22 +12,29 @@ function App() {
           throw new Error(`error status: ${response.status}`);
         } 
         const json = await response.json();
-        setData(json)
+        const lessData = json.map((item) => ({
+          item: item.item_id,
+          city: item.city,
+          price: item.sell_price_min,
+        }))
+        setData(lessData)
       } catch (e) {
         console.log(e)
       }
     }
     fetchData()
   }, []);
-  useEffect(() => {
-    console.log(data); // This will log the updated data after it has been set
-  }, [data]);
+
+  
+  // useEffect(() => {
+  //   console.log(data); // This will log the updated data after it has been set
+  // }, [data]);
 
 
   return (
     <div>
       <h1>Albion Online Price Data</h1>
-      <pre>{JSON.stringify(data)}</pre>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   )
 }
